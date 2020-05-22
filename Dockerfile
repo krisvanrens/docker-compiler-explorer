@@ -9,9 +9,9 @@ ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 
 RUN echo "*** Installing Compiler Explorer ***" \
     && apt-get update \
-    && apt-get install -y curl \
+    && apt-get install --no-install-recommends -y curl \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
-    && apt-get install -y \
+    && apt-get install --no-install-recommends -y \
         wget \
         ca-certificates \
         nodejs \
