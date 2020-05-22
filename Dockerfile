@@ -4,8 +4,11 @@ LABEL maintainer="Michele Adduci <adduci.michele@gmail.com>"
 
 EXPOSE 10240
 
+ARG DEBIAN_FRONTEND=noninteractive
+ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
+
 RUN echo "*** Installing Compiler Explorer ***" \
-    && DEBIAN_FRONTEND=noninteractive apt-get update \
+    && apt-get update \
     && apt-get install -y curl \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -y \
